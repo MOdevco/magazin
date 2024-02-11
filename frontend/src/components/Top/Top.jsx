@@ -16,7 +16,13 @@ export default function Top() {
   const toast = useToast()
   const [data, setData] = useState([])
   const [loader, setLoader] = useState(true)
+  const [post, setPost] = useState('')
 
+  const savepost = () => {
+    localStorage.setItem('id', JSON.stringify(post))
+    // localStorage.clear()
+  }
+  savepost()
 
   useEffect(() => {
     axios.get(`${api}api/product/get-data`, {
@@ -40,6 +46,7 @@ export default function Top() {
       duration: '4000'
     })
   }
+
   return (
 
     <Box mt={{ md: '90px', base: '0' }}>
@@ -53,15 +60,15 @@ export default function Top() {
         {loader ? <Loading size={'300px'} height={'380px'} /> :
           <Box mb={{ md: '20px', base: '70px' }} display='flex' alignItems='center' justifyContent='space-between' overflowX='scroll' className='thin' w='100%'>
             {/* 1 */}
-            {data.slice(0, 4).map((item) => (
+            {data.slice(0, 5).map((item) => (
               <Box display='flex' flexDirection='column' gap={4} width='302px' padding='10px' mb='2px' boxShadow=' rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;'>
                 <Box display='flex' alignItems='center' justifyContent='space-between'>
                   <Badge colorScheme='red'>{item.badge == 'gold' || item.badge == 'Gold' ? 'Gold Product' : 'Bronze Product'}</Badge>
                   <Box display='flex' alignItems='center' gap={2}>
-                    <FaRegHeart size={25} style={{ color: '#01579B' }} />
+                    <FaRegHeart onClick={() => setPost(item._id)} size={25} style={{ color: '#01579B' }} />
                   </Box>
                 </Box>
-                <Img src={item.image} height='250px' objectFit='cover' position='relative' />
+                <Link to={`product/product/${item._id}`}><Img src={item.image} height='250px' objectFit='cover' position='relative' /></Link>
                 <Box textAlign='start'>
                   <Text fontSize='20px' color='#333' fontWeight='500'>{item.name}</Text>
                   <Text fontSize='14px' color='#999' fontWeight='400'>Sharhlar: 0</Text>

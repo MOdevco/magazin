@@ -27,7 +27,7 @@ export default function Charakter() {
                 <Box padding='12px' display='flex' alignItems='center' justifyContent='space-between' bg='#F4F8FB'><Text>Xotira</Text><Text>512GB SDD</Text></Box>
                 <Box padding='12px' display='flex' alignItems='center' justifyContent='space-between'><Text>Tezkor Xotira</Text><Text>32 Gb</Text></Box>
             </Box>
-            <Text px='10px' mt='20px' display='flex' alignItems='center' gap='2px' color='#3182CE' onClick={() => setCollapse((prev) => !prev)}>Hammasini Ko'rish<IoIosArrowDown size={20} /></Text>
+            <Text px='10px' cursor='pointer' mt='20px' display='flex' alignItems='center' gap='2px' color='#3182CE' onClick={() => setCollapse((prev) => !prev)}>Hammasini Ko'rish<IoIosArrowDown size={20} /></Text>
         </Box>
     )
 }

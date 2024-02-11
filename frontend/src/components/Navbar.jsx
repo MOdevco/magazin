@@ -54,7 +54,7 @@ export default function Navbar() {
             </Box>
 
             {/* for navbar  */}
-            <Box display={{ md: 'flex', base: 'none' }} boxShadow=' 0px 4px 4px 0px rgba(0, 0, 0, 0.09)' alignItems='center' px={{ xl: '110px', md: '0', base: '0' }} justifyContent='space-evenly' paddingBottom='20px' mt='20px'>
+            <Box display={{ md: 'flex', base: 'none' }} boxShadow=' 0px 4px 4px 0px rgba(0, 0, 0, 0.09)' alignItems='center' px={{ xl: '110px', md: '0', base: '0' }} justifyContent='space-evenly' paddingBottom='20px' mt='20px' mb='20px'>
                 <img src={logo} alt="" />
                 <Button display="flex" alignItems='center' bg='#06A56C' color='white' padding='9px 12px' gap={4} fontSize={{ xl: '18px', md: '15px', }} className="catalogbtn" border='none'><Text display={{ xl: 'block', md: 'none' }}>Tovarlar Bo'limi</Text><GrAppsRounded size={20} /></Button>
                 <Box display='flex' alignItems='center' border='1px solid gray' >
@@ -63,7 +63,7 @@ export default function Navbar() {
                 </Box>
                 {/* telefon uchun  */}
                 <Box className='phone_hover'>
-                    <Text display='flex' alignItems='center' gap='2px'>+998(91) 041-14-25<IoIosArrowDown size={20} /></Text>
+                    <Text display='flex' alignItems='center' gap='2px' cursor='pointer'>+998(91) 041-14-25<IoIosArrowDown size={20} /></Text>
                     <Box className='phone_menu' display='none' >
                         <Text className='phone_icon'>+998(91) 041-14-25</Text>
                         <Text className='phone_icon'>+998(91) 041-14-25</Text>
@@ -73,12 +73,11 @@ export default function Navbar() {
                             <Text>Biz bilan Bog'laning</Text>
                             <Input placeholder='Ismingiz' />
                             <Input placeholder='Nomeringiz' />
-                            <Button bg='#01579B' color='white'>Yuborish</Button>
+                            <Button bg='#01579B' color='white' _hover='none'>Yuborish</Button>
                         </Box>
                     </Box>
                 </Box>
                 <img src={line} alt="" />
-                {/* ayri boshlash  */}
                 <Box display='flex' alignItems='center' justifyContent='space-between' w='10%'>
                     <Box width='100%' display='flex' alignItems='center' justifyContent='space-around'>
                         <Likes />

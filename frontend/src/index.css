@@ -78,3 +78,8 @@ body::-webkit-scrollbar-track {
   opacity: 1;
   right: 0;
 }
+@media (max-width: 500px) {
+  .end {
+    display: none;
+  }
+}

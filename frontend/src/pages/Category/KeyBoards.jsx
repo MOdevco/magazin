@@ -23,11 +23,12 @@ export default function KeyBoards() {
     })
       .then((res) => {
         setData(res.data)
+        setLoader(false)
       })
   }, [api])
   const handleBuy = () => {
     toast({
-      description: 'Mahsulot Qo\'shildi',
+      description: `${data.name} Savatga Qo\'shildi`,
       position: 'top-right',
       isClosable: true,
       status: 'success',
@@ -37,18 +38,18 @@ export default function KeyBoards() {
   return (
     <Box>
       <Navbar />
-      <Breadcrumb>
-        <BreadcrumbItem>
-        <BreadcrumbLink href='/'>Bosh Saxifa</BreadcrumbLink>
-        </BreadcrumbItem>
 
-        <BreadcrumbItem isCurrentPage>
-        <BreadcrumbLink>Klaviaturalar</BreadcrumbLink>
-        </BreadcrumbItem>
-      </Breadcrumb>
+      <Box mt={20} className='keybored' w='90%' m='auto'>
+        <Breadcrumb>
+          <BreadcrumbItem>
+            <BreadcrumbLink href='/'>Bosh Saxifa</BreadcrumbLink>
+          </BreadcrumbItem>
 
-      <Box mt={20} className='keybored'>
-        <Text fontSize='32px' fontWeight='700' color='#333'>Klaviaturalar</Text>
+          <BreadcrumbItem isCurrentPage>
+            <BreadcrumbLink>Klaviaturalar</BreadcrumbLink>
+          </BreadcrumbItem>
+        </Breadcrumb>
+        <Text fontSize='32px' fontWeight='700' mt='40px' color='#333'>Klaviaturalar</Text>
 
         {loader ? <Loading size={'300px'} height={'380px'} /> :
           <Box display='flex' alignItems='center' justifyContent='space-between' >

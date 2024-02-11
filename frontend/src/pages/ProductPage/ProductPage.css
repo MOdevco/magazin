@@ -57,3 +57,8 @@
 .expanded {
   height: 100%;
 }
+.swiper-slide-thumb{
+  width: 100px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
