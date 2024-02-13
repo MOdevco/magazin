@@ -11,9 +11,13 @@ const Accessories = require('../router/accessories')
 const Laptops = require('../router/laptops')
 const VideoCards = require('../router/videocards')
 const Monitors = require('../router/monitors')
+<<<<<<< HEAD
 const Work = require('../router/works')
 const Workers = require('../router/workers')
 const Comments = require('../router/comments')
+=======
+const News = require('../router/news')
+>>>>>>> ef1f5ea13665a9a88e464891ccabb3f5c5c188e5
 module.exports = function(app) {
     app.use(express.json())
     app.use('/api/auth/user', User)
@@ -28,7 +32,11 @@ module.exports = function(app) {
     app.use('/api/laptops' , Laptops)
     app.use('/api/videoCards' , VideoCards)
     app.use('/api/monitors' , Monitors)
+<<<<<<< HEAD
     app.use('/api/comments' , Monitors, Comments)
     app.use('/api' , Work)
     app.use('/api' , Workers)
+=======
+    app.use('/api/news' , News)
+>>>>>>> ef1f5ea13665a9a88e464891ccabb3f5c5c188e5
 }

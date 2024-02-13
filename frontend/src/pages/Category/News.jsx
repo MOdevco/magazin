@@ -1,9 +1,9 @@
-import { Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react'
 import React from 'react'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
+import { Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react'
 
-export default function Monitor() {
+export default function News() {
   return (
     <Box>
         <Navbar/>
@@ -13,7 +13,7 @@ export default function Monitor() {
         </BreadcrumbItem>
 
         <BreadcrumbItem isCurrentPage>
-        <BreadcrumbLink>Monitorlar</BreadcrumbLink>
+        <BreadcrumbLink>Yangiliklar</BreadcrumbLink>
         </BreadcrumbItem>
       </Breadcrumb>
 

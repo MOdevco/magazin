@@ -45,15 +45,14 @@
   z-index: 99;
   object-fit: cover !important;
 }
-.carusel .image{
+.carusel .image {
   filter: brightness(60%) !important;
 }
-
 
 .texts {
   overflow-y: scroll;
   height: 600px;
-  /* box-shadow:   inset 0px -40px 8px -10px #ebebeb;  */
+  /* box-shadow:   inset 0px -30px 8px -10px #b0b0b06f;  */
 }
 
 .texts::-webkit-scrollbar {

@@ -1,32 +1,48 @@
-import { Box, SkeletonCircle, SkeletonText } from '@chakra-ui/react'
+import { Box, Skeleton, SkeletonCircle, SkeletonText } from '@chakra-ui/react'
 import React from 'react'
 
-export default function Skeleton({size}) {
+export default function Loading({ size, height }) {
     return (
-        <Box display='flex' alignItems='center' justifyContent='space-between'>
-            <Box padding='6' boxShadow='lg' bg='white' width={size} height='350px'>
-                <SkeletonCircle size='10' />
-                <SkeletonText mt='4' noOfLines={4} spacing='4' skeletonHeight='2' /> 
-                <SkeletonText mt='4' noOfLines={4} spacing='4' skeletonHeight='2' /> 
-                <SkeletonText mt='4' noOfLines={4} spacing='4' skeletonHeight='2' /> 
+        <Box display='flex' alignItems='center' justifyContent={{xl:'space-between', md:'center', base:'center'}}>
+            <Box padding='6' boxShadow='lg' bg='white' width={size} height={height}>
+                <Skeleton height={'180px'} />
+                <Skeleton height={'10px'} mt='20px' />
+                <Skeleton height={'10px'} mt='10px' />
+                <Skeleton height={'10px'} mt='10px' />
+                <Skeleton height={'10px'} mt='10px' />
+                <Skeleton height={'10px'} mt='10px' />
+                <Skeleton height={'10px'} mt='10px' />
+                <Skeleton height={'10px'} mt='10px' />
             </Box>
-            <Box padding='6' boxShadow='lg' bg='white' width={size} height='350px'>
-                <SkeletonCircle size='10' />
-                <SkeletonText mt='4' noOfLines={4} spacing='4' skeletonHeight='2' />
-                <SkeletonText mt='4' noOfLines={4} spacing='4' skeletonHeight='2' />
-                <SkeletonText mt='4' noOfLines={4} spacing='4' skeletonHeight='2' />
+            <Box padding='6' boxShadow='lg' bg='white' width={size} display={{ xl: 'block', md: 'block' }} className='end' height={height}>
+                <Skeleton height={'180px'} />
+                <Skeleton height={'10px'} mt='20px' />
+                <Skeleton height={'10px'} mt='10px' />
+                <Skeleton height={'10px'} mt='10px' />
+                <Skeleton height={'10px'} mt='10px' />
+                <Skeleton height={'10px'} mt='10px' />
+                <Skeleton height={'10px'} mt='10px' />
+                <Skeleton height={'10px'} mt='10px' />
             </Box>
-            <Box padding='6' boxShadow='lg' bg='white' width={size} height='350px' display={{md:'block', base:'none'}}>
-                <SkeletonCircle size='10' />
-                <SkeletonText mt='4' noOfLines={4} spacing='4' skeletonHeight='2' />
-                <SkeletonText mt='4' noOfLines={4} spacing='4' skeletonHeight='2' />
-                <SkeletonText mt='4' noOfLines={4} spacing='4' skeletonHeight='2' />
+            <Box padding='6' boxShadow='lg' bg='white' width={size} display={{ xl: 'block', md: 'block', base: 'none' }} height={height}>
+                <Skeleton height={'180px'} />
+                <Skeleton height={'10px'} mt='20px' />
+                <Skeleton height={'10px'} mt='10px' />
+                <Skeleton height={'10px'} mt='10px' />
+                <Skeleton height={'10px'} mt='10px' />
+                <Skeleton height={'10px'} mt='10px' />
+                <Skeleton height={'10px'} mt='10px' />
+                <Skeleton height={'10px'} mt='10px' />
             </Box>
-            <Box padding='6' boxShadow='lg' bg='white' width={size} height='350px' display={{md:'block', base:'none'}}>
-                <SkeletonCircle size='10' />
-                <SkeletonText mt='4' noOfLines={4} spacing='4' skeletonHeight='2' />
-                <SkeletonText mt='4' noOfLines={4} spacing='4' skeletonHeight='2' />
-                <SkeletonText mt='4' noOfLines={4} spacing='4' skeletonHeight='2' />
+            <Box padding='6' boxShadow='lg' bg='white' width={size} display={{ xl: 'block', md: 'none', base: 'none' }} height={height}>
+                <Skeleton height={'180px'} />
+                <Skeleton height={'10px'} mt='20px' />
+                <Skeleton height={'10px'} mt='10px' />
+                <Skeleton height={'10px'} mt='10px' />
+                <Skeleton height={'10px'} mt='10px' />
+                <Skeleton height={'10px'} mt='10px' />
+                <Skeleton height={'10px'} mt='10px' />
+                <Skeleton height={'10px'} mt='10px' />
             </Box>
         </Box>
     )

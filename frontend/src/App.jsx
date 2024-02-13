@@ -8,6 +8,11 @@ import Laptop from "./pages/Category/Laptop"
 import Monitor from "./pages/Category/Monitor"
 import Mouses from "./pages/Category/Mouses"
 import Videokarta from "./pages/Category/Videokarta"
+import Producuts from "./pages/Category/Producuts"
+import Coments from "./pages/Category/Coments"
+import ScrollToTop from "react-scroll-to-top";
+import News from "./pages/Category/News"
+import ProductPage from "./pages/ProductPage/ProductPage"
 
 function App() {
 
@@ -21,10 +26,16 @@ function App() {
           <Route path='/monitor' element={<Monitor/>}></Route>
           <Route path='/mouses' element={<Mouses/>}></Route>
           <Route path='/videokarta' element={<Videokarta/>}></Route>
+          <Route path='/products' element={<Producuts/>}></Route>
+          <Route path='/coment' element={<Coments/>}></Route>
+          <Route path='/news' element={<News/>}></Route>
+          <Route path='/product/:type/:id' element={<ProductPage/>}></Route>
 
           {/* Not Found  */}
           <Route path="*" element={<NotFound/>}></Route>
         </Routes>
+
+        <ScrollToTop smooth style={{paddingLeft:'6px', opacity:'0.3'}}/>
       </Box>
   )
 }
