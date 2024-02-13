@@ -13,6 +13,7 @@ const VideoCards = require('../router/videocards')
 const Monitors = require('../router/monitors')
 const Work = require('../router/works')
 const Workers = require('../router/workers')
+const Comments = require('../router/comments')
 module.exports = function(app) {
     app.use(express.json())
     app.use('/api/auth/user', User)
@@ -27,6 +28,7 @@ module.exports = function(app) {
     app.use('/api/laptops' , Laptops)
     app.use('/api/videoCards' , VideoCards)
     app.use('/api/monitors' , Monitors)
+    app.use('/api/comments' , Monitors, Comments)
     app.use('/api' , Work)
     app.use('/api' , Workers)
 }
