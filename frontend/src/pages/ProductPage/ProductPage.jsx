@@ -120,16 +120,16 @@ export default function ProductPage() {
                                     </Box>
 
                                     <Box display='flex' alignItems='center' flexDirection='column' justifyContent='center'>
-                                        <Narx narx={item.currentCost} orginal={item.originalCost}/>
+                                        <Narx narx={item.currentCost} orginal={item.originalCost} />
 
                                         <Tolov />
                                     </Box>
                                 </Box>
-                        <Box display='flex' alignItems='start' justifyContent='space-between' width='95%' m={'auto'} flexDirection={{ md: 'inherit', base: 'column' }} mt='70px'>
-                            <ProductAbout about={item.informationMax}/>
+                                <Box display='flex' alignItems='start' justifyContent='space-between' width='95%' m={'auto'} flexDirection={{ md: 'inherit', base: 'column' }} mt='70px'>
+                                    <ProductAbout about={item.informationMax} />
 
-                            <ProductComent />
-                        </Box>
+                                    <ProductComent />
+                                </Box>
                             </Box>
                         ))}
 

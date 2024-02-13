@@ -8,11 +8,17 @@ import ModalForGamers from '../../components/Modal';
 import './Category.css'
 import { useEffect, useState } from 'react'
 import Loading from '../../components/skeleton'
+import { Link } from 'react-router-dom'
 
 export default function KeyBoards() {
   const [data, setData] = useState([])
   const toast = useState()
   const [loader, setLoader] = useState(true)
+  const [post, setPost] = useState('')
+
+  const savePost = () =>{
+    localStorage.setItem('id', JSON.stringify(post))
+  }
 
   useEffect(() => {
     axios.get(`${api}api/keyboard/get-data`, {
@@ -26,6 +32,7 @@ export default function KeyBoards() {
         setLoader(false)
       })
   }, [api])
+
   const handleBuy = () => {
     toast({
       description: `${data.name} Savatga Qo\'shildi`,
@@ -61,7 +68,7 @@ export default function KeyBoards() {
                     <FaRegHeart size={30} style={{ color: 'red', position: 'absolute', marginTop: '70px', zIndex: '999' }} />
                   </Box>
                 </Box>
-                <Img src={item.image} height='300px' objectFit='cover' position='relative' />
+               <Link to={`product/keyboard/${item._id}`}><Img src={item.image} height='300px' objectFit='cover' position='relative' /></Link>
                 <Box textAlign='start'>
                   <Text fontSize='20px' color='#333' fontWeight='500'>{item.name}</Text>
                   <Text fontSize='14px' color='#999' fontWeight='400'>Sharhlar: 0</Text>
