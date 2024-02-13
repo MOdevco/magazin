@@ -27,7 +27,7 @@ export default function ProductPage() {
     const { id, type } = useParams()
     const { isOpen, onOpen, onClose } = useDisclosure()
     useEffect(() => {
-        axios.get(`${api}api/product/get-data-byId/${id}`, {
+        axios.get(`${api}api/${type}/get-data-byId/${id}`, {
             headers: {
                 "ngrok-skip-browser-warning": true,
                 "Access-Control-Allow-Origin": "*",

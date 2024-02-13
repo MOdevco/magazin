@@ -12,8 +12,6 @@ export default function Likes() {
     const [val, setVal] = useState(0)
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [natija, setNatija] = useState(0)
-    const [data, setData] = useState([])
-    const [get, setGet] = useState([])
 
 
     
@@ -59,6 +57,7 @@ export default function Likes() {
                     </ModalBody>
                 </ModalContent>
             </Modal>
+            
         </Box>
     )
 }

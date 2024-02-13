@@ -68,7 +68,7 @@ export default function KeyBoards() {
                     <FaRegHeart size={30} style={{ color: 'red', position: 'absolute', marginTop: '70px', zIndex: '999' }} />
                   </Box>
                 </Box>
-               <Link to={`product/keyboard/${item._id}`}><Img src={item.image} height='300px' objectFit='cover' position='relative' /></Link>
+               <Link to={`/product/keyboard/${item._id}`}><Img src={item.image} height='300px' objectFit='cover' position='relative' /></Link>
                 <Box textAlign='start'>
                   <Text fontSize='20px' color='#333' fontWeight='500'>{item.name}</Text>
                   <Text fontSize='14px' color='#999' fontWeight='400'>Sharhlar: 0</Text>
