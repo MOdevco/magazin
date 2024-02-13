@@ -60,7 +60,6 @@ const UpdateGamers = () => {
                         <Input value={values.cost} onChange={(e) => setValues({ ...values, cost: e.target.value })} placeholder='Original cost' w={'100%'} />
                         <Input value={values.rate} onChange={(e) => setValues({ ...values, rate: e.target.value })} placeholder='Rate' w={'100%'} />
                     </Box>
-
                 </Box>
                 <Box display={'flex'} alignItems={'right'} justifyContent={'right'}>
                     <Button onClick={handleUpdate} mt={'30px'} w={'100px'} h={'40px'} color={'white'} _hover={''} bg={'#4C4C4C'}>Send</Button>

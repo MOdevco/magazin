@@ -12,6 +12,8 @@ import UpdateCategory from './page/updateCategory'
 import CategoryForGamers from './page/CategoryForGamers'
 import CategoryForGamersGet from './page/CategoryForGamersGet'
 import UpdateGamers from './page/updateGamers'
+import News from './page/news'
+import NewsGet from './page/newsGet'
 
 function App() {
   const [username, setUsername] = useState('');
@@ -74,6 +76,8 @@ function App() {
           <Route path='/admin/categoryForGamers-add' element={<CategoryForGamers />} />
           <Route path='/admin/categoryForGamers-get' element={<CategoryForGamersGet />} />
           <Route path='/admin/updateGamers/:name/:id' element={<UpdateGamers />} />
+          <Route path='/admin/add-news' element={<News />} />
+          <Route path='/admin/get-news' element={<NewsGet />} />
         </Routes>
       </Box>
     }

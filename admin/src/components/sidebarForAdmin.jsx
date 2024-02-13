@@ -39,7 +39,7 @@ const SidebarForAdmin = () => {
             <h2>
               <AccordionButton>
                 <Box pr={'5px'} fontWeight={'500'} fontSize={'20px'} color={'white'} textAlign="left">
-                  Top Category
+                  Category for gamers
                 </Box>
                 <AccordionIcon style={{color: 'white'}} />
               </AccordionButton>
@@ -50,10 +50,26 @@ const SidebarForAdmin = () => {
             </AccordionPanel>
           </AccordionItem>
 
+          <AccordionItem style={{ border: 'none' , paddingTop: '10px'}}>
+            <h2>
+              <AccordionButton>
+                <Box pr={'5px'} fontWeight={'500'} fontSize={'20px'} color={'white'} textAlign="left">
+                  News
+                </Box>
+                <AccordionIcon style={{color: 'white'}} />
+              </AccordionButton>
+            </h2>
+            <AccordionPanel style={{ border: 'none' }} pb={4} fontWeight={'500'} fontSize={'18px'} color={'white'}>
+                <Link to={'/admin/add-news'} style={{paddingTop: '15px'}}>News Post</Link>
+                <Link to={'/admin/get-news'} style={{paddingTop: '15px'}}>News Get</Link>
+            </AccordionPanel>
+          </AccordionItem>
+
         </Accordion>
 
         <Box pl={'15px'} pt={'15px'} fontWeight={'500'} fontSize={'20px'} color={'white'} textAlign="left">
             <Link to={'/admin/users'}>Users</Link>
+            
         </Box>
       </Box>
     </Box>
