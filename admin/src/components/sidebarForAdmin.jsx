@@ -59,7 +59,7 @@ const SidebarForAdmin = () => {
                 <AccordionIcon style={{color: 'white'}} />
               </AccordionButton>
             </h2>
-            <AccordionPanel style={{ border: 'none' }} pb={4} fontWeight={'500'} fontSize={'18px'} color={'white'}>
+            <AccordionPanel style={{ border: 'none' }} pb={4} fontWeight={'500'} fontSize={'18px'} display={'flex'} flexDirection={'column'} color={'white'}>
                 <Link to={'/admin/add-news'} style={{paddingTop: '15px'}}>News Post</Link>
                 <Link to={'/admin/get-news'} style={{paddingTop: '15px'}}>News Get</Link>
             </AccordionPanel>
