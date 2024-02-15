@@ -14,11 +14,7 @@ export default function KeyBoards() {
   const [data, setData] = useState([])
   const toast = useState()
   const [loader, setLoader] = useState(true)
-  const [post, setPost] = useState('')
 
-  const savePost = () =>{
-    localStorage.setItem('id', JSON.stringify(post))
-  }
 
   useEffect(() => {
     axios.get(`${api}api/keyboard/get-data`, {
@@ -59,7 +55,7 @@ export default function KeyBoards() {
         <Text fontSize='32px' fontWeight='700' mt='40px' color='#333'>Klaviaturalar</Text>
 
         {loader ? <Loading size={'300px'} height={'380px'} /> :
-          <Box display='flex' alignItems='center' justifyContent='space-between' >
+          <Box display='flex' alignItems='center' justifyContent='space-between'flexWrap='wrap' >
             {/* 1 */}
             {data.slice(0, 4).map((item, i) => (
               <Box key={i} display='flex' flexDirection='column' gap={4} width='302px' padding='10px' mb='2px' boxShadow='rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;'>
@@ -89,7 +85,7 @@ export default function KeyBoards() {
         <br /><br /><br /><br />
 
         {loader ? <Loading size={'300px'} height={'380px'} /> :
-          <Box display='flex' alignItems='center' justifyContent='space-between' mt='60px'>
+          <Box display='flex' alignItems='center' justifyContent='space-between' mt='60px' flexWrap='wrap'>
             {/* 1 */}
             {data.slice(4, 8).map((item, i) => (
               <Box key={i} display='flex' flexDirection='column' gap={4} width='302px' padding='10px' mb='2px' boxShadow='rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;'>
@@ -119,7 +115,7 @@ export default function KeyBoards() {
         <br /><br /><br /><br />
 
         {loader ? <Loading size={'300px'} height={'380px'} /> :
-          <Box display='flex' alignItems='center' justifyContent='space-between'>
+          <Box display='flex' alignItems='center' justifyContent='space-between' flexWrap='wrap'>
             {/* 1 */}
             {data.slice(8, 13).map((item, i) => (
               <Box key={i} display='flex' flexDirection='column' gap={4} width='302px' padding='10px' mb='2px' boxShadow='rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;'>
