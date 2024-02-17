@@ -7,12 +7,12 @@ import Aksesuars from "./pages/Category/Aksesuars"
 import Laptop from "./pages/Category/Laptop"
 import Monitor from "./pages/Category/Monitor"
 import Mouses from "./pages/Category/Mouses"
-import Videokarta from "./pages/Category/Videokarta"
 import Producuts from "./pages/Category/Producuts"
 import Coments from "./pages/Category/Coments"
 import ScrollToTop from "react-scroll-to-top";
 import News from "./pages/Category/News"
 import ProductPage from "./pages/ProductPage/ProductPage"
+import Phones from "./pages/Category/Phones"
 
 function App() {
 
@@ -25,7 +25,7 @@ function App() {
           <Route path='/laptop' element={<Laptop/>}></Route>
           <Route path='/monitor' element={<Monitor/>}></Route>
           <Route path='/mouses' element={<Mouses/>}></Route>
-          <Route path='/videokarta' element={<Videokarta/>}></Route>
+          <Route path='/phones' element={<Phones/>}></Route>
           <Route path='/products' element={<Producuts/>}></Route>
           <Route path='/coment' element={<Coments/>}></Route>
           <Route path='/news' element={<News/>}></Route>

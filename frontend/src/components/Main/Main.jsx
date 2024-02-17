@@ -20,7 +20,7 @@ import Loading from '../skeleton';
 
 export default function Main() {
     const [data, setData] = useState([])
-    const [loader, setLoader] = useState('')
+    const [loader, setLoader] = useState(true)
 
     useEffect(() => {
         axios.get(`${api}/api/news/get-data`, {
@@ -31,6 +31,7 @@ export default function Main() {
         })
             .then((res) => {
                 setData(res.data)
+                setLoader(false)
             })
     }, [api])
     return (
@@ -67,7 +68,7 @@ export default function Main() {
             </Box>
 
             {/* for coment  */}
-            <Box display='flex' alignItems='center' justifyContent='center' overflow='hidden'>
+            <Box display='flex' alignItems='center' justifyContent='center' overflow='hidden' mb={20}>
                 <Box display={'flex'} alignItems={'center'} justifyContent={'space-between'} flexDirection={{ xl: 'inherit', md: 'column', base: 'column' }} width={{ md: '729px', base: '100%' }} className='card_child'>
                     <Box borderRight='1px solid gray' className='border' padding='10px' >
                         <Box>
@@ -161,8 +162,8 @@ export default function Main() {
             </Box>
 
             {/* for novosti  */}
-            {loader ? <Loading /> :
-                <Box mt={20} >
+            {loader ? <Loading size={'300px'} height={'380px'} /> :
+                <Box  >
                     <Text fontSize='28px' fontWeight='600' color='#333'>Yangiliklar</Text>
                     {data.map((item) => {
                         <Swiper

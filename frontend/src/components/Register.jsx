@@ -14,6 +14,7 @@ export default function Register() {
     const handleClick = () => setShow(!show)
 
     const [register, setRegister] = useState(false);
+    
     // sign 
     const handleRegister = () => {
         axios.post(`${api}api/auth/user/create`, {
@@ -56,6 +57,9 @@ export default function Register() {
                 isClosable: true,
             })
         })
+    }
+    const localStorageName = () =>{
+        localStorage.getItem('token')
     }
 
     return (

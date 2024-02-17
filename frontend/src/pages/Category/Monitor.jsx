@@ -17,7 +17,7 @@ export default function Monitor() {
 
 
   useEffect(() => {
-    axios.get(`${api}api/keyboard/get-data`, {
+    axios.get(`${api}api/monitors/get-data`, {
       headers: {
         "ngrok-skip-browser-warning": true,
         "Access-Control-Allow-Origin": "*",
@@ -64,7 +64,7 @@ export default function Monitor() {
                     <FaRegHeart size={30} style={{ color: 'red', position: 'absolute', marginTop: '70px', zIndex: '999' }} />
                   </Box>
                 </Box>
-               <Link to={`/product/keyboard/${item._id}`}><Img src={item.image} height='300px' objectFit='cover' position='relative' /></Link>
+               <Link to={`/product/monitors/${item._id}`}><Img src={item.image} height='300px' objectFit='cover' position='relative' /></Link>
                 <Box textAlign='start'>
                   <Text fontSize='20px' color='#333' fontWeight='500'>{item.name}</Text>
                   <Text fontSize='14px' color='#999' fontWeight='400'>Sharhlar: 0</Text>
@@ -94,7 +94,7 @@ export default function Monitor() {
                     <FaRegHeart size={30} style={{ color: 'red', position: 'absolute', marginTop: '70px', zIndex: '999' }} />
                   </Box>
                 </Box>
-                <Img src={item.image} height='300px' objectFit='cover' position='relative' />
+                <Link to={`/product/monitors/${item._id}`}><Img src={item.image} height='300px' objectFit='cover' position='relative' /></Link>
                 <Box textAlign='start'>
                   <Text fontSize='20px' color='#333' fontWeight='500'>{item.name}</Text>
                   <Text fontSize='14px' color='#999' fontWeight='400'>Sharhlar: 0</Text>
@@ -124,7 +124,7 @@ export default function Monitor() {
                     <FaRegHeart size={30} style={{ color: 'red', position: 'absolute', marginTop: '70px', zIndex: '999' }} />
                   </Box>
                 </Box>
-                <Img src={item.image} height='300px' objectFit='cover' position='relative' />
+                <Link to={`/product/monitors/${item._id}`}><Img src={item.image} height='300px' objectFit='cover' position='relative' /></Link>
                 <Box textAlign='start'>
                   <Text fontSize='20px' color='#333' fontWeight='500'>{item.name}</Text>
                   <Text fontSize='14px' color='#999' fontWeight='400'>Sharhlar: 0</Text>

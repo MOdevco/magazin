@@ -7,6 +7,13 @@
   border-color: #dbdcef #0000;
   animation: spinner-e04l1k 1s infinite linear;
 }
+@media(max-width:290px){
+  .spinner{
+    width: 150px;
+    height: 150px;
+
+  }
+}
 
 .spinner::before,
 .spinner::after {

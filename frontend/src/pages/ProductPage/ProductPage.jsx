@@ -19,6 +19,7 @@ import ProductComent from './ProductComent';
 import axios from 'axios';
 import { api } from '../../api';
 import { useParams } from 'react-router-dom';
+import Loader from '../../components/loader/Loader';
 
 export default function ProductPage() {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -44,7 +45,7 @@ export default function ProductPage() {
     return (
         <>
             {
-                loading ? 'keldimi' :
+                loading ? <Loader/> :
                     <Box>
                         <Navbar />
 

@@ -94,12 +94,12 @@ export default function Game() {
                     </SwiperSlide>
                     {/* 5 */}
                     <SwiperSlide>
-                        <Link to='/videokarta'>
+                        <Link to='/phones'>
                             <Box display='flex' alignItems='center' flexDirection='column'>
                                 <Box background='white' width='180px' height='180px' borderRadius='50%' className='child_card'>
-                                    <Image src={videokarta} width='150px' transform='scale(1.50) rotate(2deg)' pt='30px' />
+                                    <Image src='https://static0.xdaimages.com/wordpress/wp-content/uploads/2023/02/iphone-14-pro.png' width='120px' pl='10px' transform='scale(1.50) rotate(2deg)' pt='30px' />
                                 </Box>
-                                <Text fontSize='18px' color='white' >Videokarta</Text>
+                                <Text fontSize='18px' color='white' >Telefonlar</Text>
                             </Box>
                         </Link>
                     </SwiperSlide>
