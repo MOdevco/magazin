@@ -5,6 +5,7 @@
 
 .active {
   cursor: pointer;
+  border-radius: 4px;
 }
 
 .carusel {

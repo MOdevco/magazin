@@ -29,7 +29,6 @@ const Users = () => {
       setLoading(false)
     })
   }, [api])
-  console.log(data);
   return (
     <Box w={"95%"} m={"auto"} pl={"300px"} pt={"50px"}>
       <TableContainer border={"1px solid #ADADAE"} rounded={"12px"}>

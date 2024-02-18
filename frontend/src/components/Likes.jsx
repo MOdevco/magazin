@@ -6,15 +6,21 @@ import { tv } from '../assets';
 import { FaRegHeart } from 'react-icons/fa';
 import axios from 'axios';
 import { api } from '../api';
+import DeleteAlert from './DeleteAlert';
 
 
 export default function Likes() {
     const [val, setVal] = useState(0)
     const { isOpen, onOpen, onClose } = useDisclosure()
+    const [show, setShow] = useState(false)
     const [natija, setNatija] = useState(0)
 
+    const discardShow = () => {
+        setShow(true)
+    }
 
-    
+
+
 
     const plus = () => {
         setVal(val + 360000)
@@ -46,18 +52,15 @@ export default function Likes() {
                                 <Text>Процессор Intel Core i5-10400F, Box (BX8070110400F)(BX8070110400F)</Text>
                                 <Text>To'liq Ma'lumot</Text>
                                 <Text>360 000sum</Text>
-                                <Button color='red'><MdDeleteForever size={20} /></Button>
-                            </Box>
-                            
-                            {/* obshi  */}
-                            <Box display='flex' alignItems='center' justifyContent='end' gap='15px' mt='70px' mb='110px'>
-                                <Button bg='#06A56C' color='white'>Zakaz Berish</Button>
+                                <DeleteAlert />
                             </Box>
                         </Box>
+                      
                     </ModalBody>
                 </ModalContent>
             </Modal>
-            
+
+
         </Box>
     )
 }

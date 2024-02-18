@@ -13,6 +13,11 @@ import ScrollToTop from "react-scroll-to-top";
 import News from "./pages/Category/News"
 import ProductPage from "./pages/ProductPage/ProductPage"
 import Phones from "./pages/Category/Phones"
+import Buyurtma from "./pages/Buyurtma/Buyurtma"
+import Profile from "./pages/Profile/Profile"
+import ProfileName from "./pages/Profile/ProfileName"
+import ProfilePassword from "./pages/Profile/ProfilePassword"
+import Test from "./components/Test"
 
 function App() {
 
@@ -29,6 +34,11 @@ function App() {
           <Route path='/products' element={<Producuts/>}></Route>
           <Route path='/coment' element={<Coments/>}></Route>
           <Route path='/news' element={<News/>}></Route>
+          <Route path='/checkout' element={<Buyurtma />}></Route>
+          <Route path='/test' element={<Test />}></Route>
+          <Route path='/profile' element={<Profile />}></Route>
+          <Route path='/profileName' element={<ProfileName />}></Route>
+          <Route path='/profilePassword' element={<ProfilePassword />}></Route>
           <Route path='/product/:type/:id' element={<ProductPage/>}></Route>
 
           {/* Not Found  */}

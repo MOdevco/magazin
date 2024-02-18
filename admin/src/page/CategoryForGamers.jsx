@@ -14,7 +14,6 @@ const CategoryForGamers = () => {
 		rate: "",
 	  });
 	  const [apiRoute, setApiRoute] = useState('keyboard')
-	  console.log(apiRoute);
 	  const toast = useToast()
 
 

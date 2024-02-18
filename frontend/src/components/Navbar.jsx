@@ -1,4 +1,4 @@
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Input, Text, Tooltip, useDisclosure } from '@chakra-ui/react'
+import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Image, Input, Text, Tooltip, useDisclosure } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { HiOutlineBars3 } from "react-icons/hi2";
 import Register from './Register';
@@ -14,6 +14,7 @@ import { MdDeleteForever } from 'react-icons/md';
 import { IoIosArrowDown } from "react-icons/io";
 import Likes from './Likes';
 import { Link } from 'react-router-dom';
+import PhoneModal from './PhoneModal';
 
 
 export default function Navbar() {
@@ -43,10 +44,10 @@ export default function Navbar() {
                     <Link><Text>Yordam</Text></Link>
                     <Link><Text>Bog'lanish</Text></Link>
                 </Box>
-                <Box display='flex' alignItems='center' gap='2px' >
-                    <Text opacity='0.7'>Ru</Text>
+                <Box display='flex' alignItems='center' gap='8px' >
+                    <Text opacity='0.7' cursor='pointer'>Ru</Text>
                     <Text>/</Text>
-                    <Text>Uz</Text>
+                    <Text cursor='pointer'>Uz</Text>
                     <Box pl='20px' cursor='pointer'>
                         <Register />
                     </Box>
@@ -54,8 +55,8 @@ export default function Navbar() {
             </Box>
 
             {/* for navbar  */}
-            <Box display={{ md: 'flex', base: 'none' }} boxShadow=' 0px 4px 4px 0px rgba(0, 0, 0, 0.09)' alignItems='center' px={{ xl: '10px', md: '0', base: '0' }} justifyContent='space-evenly' paddingBottom='20px' mt='20px' mb='20px'>
-                <img src={logo} alt="" />
+            <Box display={{ md: 'flex', base: 'none' }}  boxShadow='0px 4px 4px 0px rgba(0, 0, 0, 0.09)' alignItems='center' px={{ xl: '10px', md: '0', base: '0' }} justifyContent='space-evenly' >
+                <Image width='15%' src={logo} alt=""  />
                 <Button display="flex" alignItems='center' bg='#06A56C' color='white' padding='9px 12px' gap={4} fontSize={{ xl: '18px', md: '15px', }} className="catalogbtn" border='none'><Text display={{ xl: 'block', md: 'none' }}>Tovarlar Bo'limi</Text><GrAppsRounded size={20} /></Button>
                 <Box display='flex' alignItems='center' border='1px solid gray' >
                     <Input variant='unstyled' width={{ xl: '550px', md: '158px', base: '20px' }} pl='40px' placeholder="Qidirish" />
@@ -88,12 +89,12 @@ export default function Navbar() {
 
             {/* for mobile nav  */}
             <Box>
-                <Box bg='#060F42' display={{ md: 'none', base: 'flex' }} flexDirection='column' padding='20px' gap='20px'>
+                <Box bg='#060F42' display={{ md: 'none', base: 'flex' }} flexDirection='column' padding='10px' gap='20px'>
                     <Box display={{ md: 'none', base: 'flex' }} alignItems='center' color='white' justifyContent='space-around' onClick={hidewinp}>
                         <FaBarsStaggered ref={btnRef} onClick={onOpen} size={30} style={{ cursor: 'pointer' }} />
-                        {show ? <Link><img src={logo} alt="" /></Link> :
-                            <Link to='/'><img src={logo} alt="" /></Link>}
-                        <FaPhoneVolume size={30} />
+                        {show ? <Link><Image w='250px' src={logo} alt="" /></Link> :
+                            <Link to='/'><Image w='250px' src={logo} alt="" /></Link>}
+                      <PhoneModal />
                     </Box>
                     {show ?
                         <Box display='flex' alignItems='center' justifyContent='space-around'>
@@ -119,7 +120,7 @@ export default function Navbar() {
                     <DrawerOverlay />
                     <DrawerContent bg='#060F42' color='white'>
                         <DrawerCloseButton />
-                        <DrawerHeader><img src={logo} alt="" /></DrawerHeader>
+                        <DrawerHeader><Image w='65%' src={logo} alt="" /></DrawerHeader>
 
                         <DrawerBody display='flex' flexDirection='column' justifyContent='start'>
                             <Register />

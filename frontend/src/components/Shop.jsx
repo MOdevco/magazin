@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { MdDeleteForever } from "react-icons/md";
 import { FiShoppingCart } from 'react-icons/fi';
 import { tv } from '../assets';
+import { Link } from 'react-router-dom';
+import DeleteAlert from './DeleteAlert';
 
 
 export default function Shop() {
@@ -46,13 +48,13 @@ export default function Shop() {
                                     <Button onClick={plus}>+</Button>
                                 </Box>
                                 <Text>360 000sum</Text>
-                                <Button color='red'><MdDeleteForever size={20} /></Button>
+                                <DeleteAlert />
                             </Box>
 
                             {/* obshi  */}
                             <Box display='flex' alignItems='center' justifyContent='end' gap='15px' mt='70px' mb='110px'>
                                 <Text color='#060F42' fontSize='28px' fontWeight='700'>{val}sum</Text>
-                                <Button bg='#06A56C' color='white'>Zakaz Berish</Button>
+                               <Link to={'/checkout'}><Button _hover='none' bg='#06A56C' color='white'>Zakaz Berish</Button></Link>
                             </Box>
                         </Box>
                     </ModalBody>

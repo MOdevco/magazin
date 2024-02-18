@@ -33,7 +33,6 @@ const CategoryForGamersGet = () => {
       })
     }, [apiRoute])
 
-console.log(apiRoute);  
   
 
     const handleDelete = (id) => {

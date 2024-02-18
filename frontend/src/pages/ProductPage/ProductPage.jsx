@@ -39,7 +39,6 @@ export default function ProductPage() {
                 setLoading(false)
             })
     }, [type, id, api])
-    console.log(data);
 
 
     return (

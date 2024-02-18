@@ -42,7 +42,6 @@ export default function Aksesuars() {
       duration: '4000'
     })
   }
-  console.log(data);
   return (
     <Box>
       <Navbar />

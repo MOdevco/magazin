@@ -1,11 +1,10 @@
-import { Box, Card, CardBody, CardFooter, Heading, Image, Img, Stack, Text } from '@chakra-ui/react'
+import { Box, Card, CardBody, CardFooter, Heading, Image, Img, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Stack, Text, useDisclosure } from '@chakra-ui/react'
 import { SiAcer, SiApple, SiAsus, SiLenovo, SiSamsung, SiSony, SiXiaomi } from "react-icons/si";
 import './Main.css'
 import { GrHpi } from 'react-icons/gr';
 import Marquee from 'react-fast-marquee'
 import { avatar, image, nature } from '../../assets';
 import { FaStar } from 'react-icons/fa';
-import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import React, { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -16,14 +15,17 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { api } from '../../api';
 import Loading from '../skeleton';
+import { FaArrowRightLong } from 'react-icons/fa6';
+import NewsModal from '../../pages/Category/newsmodal';
 
 
 export default function Main() {
     const [data, setData] = useState([])
     const [loader, setLoader] = useState(true)
+    const { isOpen, onOpen, onClose } = useDisclosure()
 
     useEffect(() => {
-        axios.get(`${api}/api/news/get-data`, {
+        axios.get(`${api}api/news/get-data`, {
             headers: {
                 "ngrok-skip-browser-warning": true,
                 "Access-Control-Allow-Origin": "*",
@@ -162,53 +164,30 @@ export default function Main() {
             </Box>
 
             {/* for novosti  */}
-            {loader ? <Loading size={'300px'} height={'380px'} /> :
-                <Box  >
-                    <Text fontSize='28px' fontWeight='600' color='#333'>Yangiliklar</Text>
-                    {data.map((item) => {
-                        <Swiper
-                            slidesPerView={1}
-                            spaceBetween={10}
-                            pagination={{
-                                clickable: true,
-                            }}
-                            breakpoints={{
-                                640: {
-                                    slidesPerView: 2,
-                                    spaceBetween: 20,
-                                },
-                                768: {
-                                    slidesPerView: 3,
-                                    spaceBetween: 40,
-                                },
-                                1024: {
-                                    slidesPerView: 4,
-                                    spaceBetween: 50,
-                                },
-                            }}
-                            className="mySwiper"
-                        >
+            <Box>
+                <Box display='flex' alignItems={{ md: 'center', base: 'start' }} mt={{ md: '0', base: '70px' }} mb='40px' flexDirection={{ md: 'inherit', base: 'column' }} justifyContent='space-between' >
+                    <Text fontSize='40px' fontWeight='700'>Yangiliklar</Text>
+                    <Link to='/news'><Text color='#01579B' display='flex' alignItems='center' gap={2} fontWeight='500' >Hammasini Ko'rish<FaArrowRightLong /></Text></Link>
+                </Box>
+                {loader ? <Loading size={'300px'} height={'380px'} /> :
+                    <Box display='flex' alignItems='center' flexWrap='wrap' justifyContent='space-between'>
+                        {data.slice(0, 3).map((item, i) => (
+                            <Card maxW='sm' mb='10px'>
+                                <CardBody>
+                                    <Image src={item.image} />
+                                    <Stack mt='6' spacing='3'>
+                                        <Heading size='md'>{item.title}</Heading>
+                                        <Text>{item.information.slice(0, 400)}</Text>
+                                    </Stack>
+                                </CardBody>
+                                <CardFooter>
+                                    <NewsModal information={item.information} title={item.title} />
+                                </CardFooter>
+                            </Card>
 
-                            <Box>
-                                {/* 1 */}
-                                <SwiperSlide>
-                                    <Card maxW='sm' mb='10px'>
-                                        <CardBody>
-                                            <Image src={item.image} />
-                                            <Stack mt='6' spacing='3'>
-                                                <Heading size='md'>{item.title}</Heading>
-                                                <Text>{item.information.slice(0, 400)}</Text>
-                                            </Stack>
-                                        </CardBody>
-                                        <CardFooter>
-                                            <Link to='/news'><Text display='flex' alignItems='center' gap={2} className='btn' color='#01579B'><span>Ko'proq Ko'rish</span></Text></Link>
-                                        </CardFooter>
-                                    </Card>
-                                </SwiperSlide>
-                            </Box>
-                        </Swiper>
-                    })}
-                </Box>}
+                        ))}
+                    </Box>}
+                </Box>
         </Box>
     )
 }

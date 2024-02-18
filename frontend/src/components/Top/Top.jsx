@@ -52,7 +52,7 @@ export default function Top() {
     <Box mt={{ md: '90px', base: '0' }}>
       <Box display='flex' alignItems={{ md: 'center', base: 'start' }} mt={{ md: '0', base: '70px' }} mb='40px' flexDirection={{ md: 'inherit', base: 'column' }} justifyContent='space-between' >
         <Text fontSize='40px' fontWeight='700'>Top Mahsulotlar</Text>
-        <Link to='/products'><Text color='#01579B' display='flex' alignItems='center' gap={2} fontWeight='500' >Смотреть все товары<FaArrowRightLong /></Text></Link>
+        <Link to='/products'><Text color='#01579B' display='flex' alignItems='center' gap={2} fontWeight='500' >Qolgan Mahsulotlar<FaArrowRightLong /></Text></Link>
       </Box>
 
       {/* swipper 1 */}
@@ -60,7 +60,7 @@ export default function Top() {
         {loader ? <Loading size={'300px'} height={'380px'} /> :
           <Box mb={{ md: '20px', base: '70px' }} display='flex' alignItems='center' justifyContent='space-between' overflowX='scroll' className='thin' w='100%' flexWrap='wrap'>
             {/* 1 */}
-            {data.slice(0, 5).map((item) => (
+            {data.slice(0, 4).map((item) => (
               <Box display='flex' flexDirection='column' gap={4} width='302px' padding='10px' mb='2px' boxShadow=' rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;'>
                 <Box display='flex' alignItems='center' justifyContent='space-between'>
                   <Badge colorScheme='red'>{item.badge == 'gold' || item.badge == 'Gold' ? 'Gold Product' : 'Bronze Product'}</Badge>

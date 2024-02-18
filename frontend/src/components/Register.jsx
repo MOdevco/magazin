@@ -3,6 +3,7 @@ import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalCloseBu
 import { FaEye, FaEyeSlash, } from "react-icons/fa";
 import axios from 'axios';
 import { api } from '../api';
+import {Link}  from 'react-router-dom'
 
 
 export default function Register() {
@@ -14,7 +15,7 @@ export default function Register() {
     const handleClick = () => setShow(!show)
 
     const [register, setRegister] = useState(false);
-    
+
     // sign 
     const handleRegister = () => {
         axios.post(`${api}api/auth/user/create`, {
@@ -27,6 +28,7 @@ export default function Register() {
                 "Access-Control-Allow-Origin": "*",
             }
         }).then((res) => {
+            localStorage.setItem('name', value.name)
             toast({
                 description: `${res.data.message}`,
                 status: 'success',
@@ -49,6 +51,7 @@ export default function Register() {
             }
         }).then((res) => {
             localStorage.setItem('token', res.data.token);
+            localStorage.setItem('name', value1.username)
             toast({
                 description: `${res.data.message}`,
                 status: 'success',
@@ -58,17 +61,19 @@ export default function Register() {
             })
         })
     }
-    const localStorageName = () =>{
-        localStorage.getItem('token')
-    }
+    const localStorageName = localStorage.getItem('name')
 
     return (
 
 
         <Box>
             {/* <BreadcrumbLink pl='10px' onClick={onOpen} display={{ xl: 'none', md: 'none', base: 'block' }}>Регистрация</BreadcrumbLink> */}
-            {/* <Box display={{ xl: 'block', md: 'block', base: 'none' }} onClick={onOpen}>  <GoPerson size={30} /></Box> */}
-            <Text onClick={onOpen} fontSize={'15px'} cursor='pointer'>Ro'yhatdan O'tish</Text>
+            {/* <Box display={{ xl: 'block', md: 'block', base: 'none'[] }} onClick={onOpen}>  <GoPerson size={30} /></Box> */}
+
+            {localStorageName ?
+                <Link><Text fontSize={'15px'} cursor='pointer'>{localStorageName}</Text></Link> :
+                <Text  fontSize={'15px'} cursor='pointer' onClick={onOpen}>Ro'yhatdan Otish</Text>
+            }
 
             {register ?
                 // 1
@@ -88,6 +93,7 @@ export default function Register() {
                                     </Box>
                                     <Box display='flex' alignItems='center' justifyContent='center' mt='40px' gap='10px'>
                                         <Text>Avval Ro'yhatdan O'tganmisz?  </Text>
+
                                         <Text onClick={() => setRegister(false)} color='blue' cursor='pointer'>Kirish</Text>
                                     </Box>
                                     <Button bg='#01579B' color='white' onClick={handleRegister}>Ro'yhatdan O'tish</Button>

@@ -1,4 +1,4 @@
-import logo from './Logo.svg'
+import logo from './Logo.png'
 import line from './line.png'
 import tv from './tv.png'
 import key from './key.png'

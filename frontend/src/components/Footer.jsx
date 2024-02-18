@@ -1,4 +1,4 @@
-import { Box, Button, Divider, Heading, Input, Text, Tooltip } from '@chakra-ui/react'
+import { Box, Button, Divider, Heading, Image, Input, Text, Tooltip } from '@chakra-ui/react'
 import React from 'react'
 import { FaInstagram, FaFacebook, FaWhatsapp, FaTelegramPlane, FaYoutube, FaLinkedin, FaCcMastercard, FaCcVisa, } from "react-icons/fa";
 import { logo } from '../assets';
@@ -82,7 +82,7 @@ export default function Footer() {
                 <Divider />
                 <Box display='flex' alignItems='center' justifyContent='space-between' padding='20px'>
                     <Box display='flex' alignItems={{ xl: 'center', base: 'start' }} gap='10px' flexDirection={{ xl: 'inherit', md: 'column', base: 'column' }}>
-                        <img src={logo} alt="" />
+                        <Image w={{xl:'30%', base:'80%'}} src={logo} alt="" />
                         <Text color='white' fontSize='12px' w={{ xl: '100%', base: '70%' }}>2024-2030 Bu Internat Do'koni Eng Ishonchili Va Hafsiz</Text>
                     </Box>
                     <Box display='flex ' alignItems='center' gap='10px' flexDirection={{ xl: 'none', base: 'column' }} >

@@ -44,7 +44,6 @@ export default function LapTop() {
       duration: '4000'
     })
   }
-  console.log(data);
   return (
     <Box>
       <Navbar />
