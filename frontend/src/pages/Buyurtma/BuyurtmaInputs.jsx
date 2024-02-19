@@ -1,7 +1,6 @@
 import { Box, Input, Text } from '@chakra-ui/react'
-import react, { useState } from 'react'
 
-export default function BuyurtmaINputs({InputValue, setInputValue}) {
+export default function BuyurtmaInputs({ InputValue, setInputValue }) {
 
 
     return (
@@ -15,7 +14,7 @@ export default function BuyurtmaINputs({InputValue, setInputValue}) {
                 </Box>
                 <Box>
                     <Text>Uy *</Text>
-                    <Input required  />
+                    <Input required />
                 </Box>
             </Box>
             {/* 2 */}

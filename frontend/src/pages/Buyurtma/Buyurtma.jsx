@@ -2,15 +2,11 @@ import { Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Checkbox, Input, Selec
 import React, { useState } from 'react'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
-import { FaCcMastercard, FaCheck } from 'react-icons/fa'
 import BuyurtmaHaqida from './BuyurtmaHaqida'
 import BuyurtmaSelect from './BuyurtmaSelect'
-import BuyurtmaINputs from './BuyurtmaINputs'
-import { HiCreditCard } from 'react-icons/hi2'
-import { BsFillCreditCard2FrontFill } from "react-icons/bs";
-import { IoCardOutline } from 'react-icons/io5'
 import BuyurtmaTolov from './buyurtmaTolov'
 import BuyurtmaMenu from './BuyurtmaMenu'
+import BuyurtmaInputs from './BuyurtmaInputs'
 
 export default function Buyurtma(props) {
     const [inputValue, setInputValue] = useState("")
@@ -27,6 +23,8 @@ export default function Buyurtma(props) {
                     <BreadcrumbLink>Buyurtma Berish</BreadcrumbLink>
                 </BreadcrumbItem>
             </Breadcrumb>
+
+
             <Box width={{ xl: '80%', base: '90%' }} m='auto' display='flex' justifyContent='space-between' flexDirection={{ xl: 'inherit', md: 'column', base: 'column' }}>
                 <Box position='relative'>
                     <Text fontSize='28px' fontWeight='600' mb='60px'>Buyurtmani Rasmiylashtirish</Text>
@@ -41,7 +39,7 @@ export default function Buyurtma(props) {
 
                         {/* for inputs  */}
                         <Text>Tuman</Text>
-                        <BuyurtmaINputs value={inputValue} setInputValue={setInputValue} />
+                        <BuyurtmaInputs value={inputValue} setInputValue={setInputValue} />
                     </Box>
 
                     <BuyurtmaTolov />
